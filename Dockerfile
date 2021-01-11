@@ -10,7 +10,7 @@ COPY . .
 
 ENV LOG_PATH=../logs/node-service
 
-VOLUME ../logs/node-service ${LOG_PATH}
+VOLUME ${LOG_PATH} /usr/src/app/${LOG_PATH}
 
 EXPOSE 8080 8081
 
