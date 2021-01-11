@@ -15,6 +15,8 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+VOLUME ../logs/node-service ./logs/node-service
+
 EXPOSE 8080 8081
 
 RUN ["chmod", "+x", "wrapper-process.sh"]
