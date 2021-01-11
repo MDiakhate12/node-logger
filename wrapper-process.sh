@@ -3,6 +3,8 @@
   
 # turn on bash's job control
 set -m
+
+mkdir -p ../logs/node-service
   
 # Start the primary process and put it in the background
 node index.js &

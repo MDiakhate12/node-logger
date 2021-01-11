@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 const fs = require("fs");
+const { exec } = require("child_process");
 
 const port = 3000;
 
@@ -10,9 +11,12 @@ var app = express();
 // app.use(express.static(path.join(__dirname, "public")));
 
 const accessLogStream = fs.createWriteStream(
-  "../logs/node-service/node-service.log",
+   `${process.env.LOG_PATH || '../logs/node-service/'}/node-service.log`,
   { flags: "a" }
 );
+
+console.log("LOG_PATH = ", process.env.LOG_PATH);
+
 
 app.use(express.json());
 
