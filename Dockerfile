@@ -16,4 +16,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080 8081
+
+RUN ["chmod", "+x", "wrapper-process.sh"]
+
 CMD ./wrapper-process.sh
